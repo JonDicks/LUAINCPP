@@ -21,7 +21,12 @@ static void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize){
 
 int main(int argc, const char * argv[]) {
     lua_State *lua = luaL_newstate();
-    std:: cout << lua;
-    std::cout << "Hello, World!\n";
+    std::cout << "built lua enviorment \n";
     return 0;
 }
+
+//lua_CFunction foo (){
+//    lua_State *lua = luaL_newstate();
+//    luaopen_io(lua);
+//    return 0;
+//}
