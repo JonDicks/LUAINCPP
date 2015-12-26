@@ -9,24 +9,25 @@
 #include <iostream>
 #include "INCLUA.h"
 
-static void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize){
-    (void) ud;
-    (void) osize;
-    if (nsize == 0){
-        free(ptr);
-        return NULL;
-    }
-    else  return realloc(ptr, nsize);
-}
+//static void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize){
+//    (void) ud;
+//    (void) osize;
+//    if (nsize == 0){
+//        free(ptr);
+//        return NULL;
+//    }
+//    else  return realloc(ptr, nsize);
+//}
 
 int main(int argc, const char * argv[]) {
+    lua_Integer keepo;
     lua_State *lua = luaL_newstate();
-    std::cout << "built lua enviorment \n";
+    std::cout << "built lua enviorment: " << lua << "\n";
+    lua_pushinteger(lua, keepo);
+    std::cout << "pushed integer 'keepo' onto stack \n";
+    
+    
+    lua_close(lua);
     return 0;
 }
 
-//lua_CFunction foo (){
-//    lua_State *lua = luaL_newstate();
-//    luaopen_io(lua);
-//    return 0;
-//}
