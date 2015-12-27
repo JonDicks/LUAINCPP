@@ -7,7 +7,10 @@
 //
 
 #include <iostream>
-#include "INCLUA.h"
+extern "C"{
+    #include "INCLUA.h"
+    #include "test.cpp"
+}
 
 //static void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize){
 //    (void) ud;
@@ -20,6 +23,7 @@
 //}
 
 int main(int argc, const char * argv[]) {
+    test();
     lua_Integer keepo;
     lua_State *lua = luaL_newstate();
     std::cout << "built lua enviorment: " << lua << "\n";
