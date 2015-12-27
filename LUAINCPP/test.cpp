@@ -7,20 +7,32 @@
 //
 
 #include <stdio.h>
+#include <iostream>
+
 
 extern "C"{
     #include "INCLUA.h"
 }
 
 int test() {
-    lua_State *lua = luaL_newstate();
-    lua_newtable(lua);
-    luaL_Buffer buffy;
-    const char *s;
-//    size_t sizeOfString = 10;
-    luaL_buffinit(lua, &buffy);
-    luaL_addstring(&buffy, s);
-//    thingy = lua_gettable(lua, *s);
-    
+    lua_State *luatest = luaL_newstate();
+    std::cout << "built lua enviorment: " << luatest << "\n";
+    lua_Integer testint;
+    lua_pushinteger(luatest, testint);
+    std::cout << "pushed integer 'testint' onto stack \n" << "testint is equal to: " << testint << std::endl;
+    for (testint = 0; testint <= 10; testint += 1){
+        std::cout << "testint =" << testint << std::endl;
+        if (testint != 0){
+            lua_remove(luatest, -1);
+        }
+        lua_pushinteger(luatest, testint);
+        
+    }
+    lua_remove(luatest, -1);
+    if (testint == 0) {
+        std::cout << "removed testint from stack \n";
+    }
+
+    lua_close(luatest);
     return 0;
 }

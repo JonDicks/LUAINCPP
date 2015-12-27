@@ -24,18 +24,7 @@ extern "C"{
 
 int main(int argc, const char * argv[]) {
     test();
-    lua_Integer keepo;
     lua_State *lua = luaL_newstate();
-    std::cout << "built lua enviorment: " << lua << "\n";
-    lua_pushinteger(lua, keepo);
-    std::cout << "pushed integer 'keepo' onto stack \n" << "keepo is equal to: " << keepo << "\n";
-    for (LUA_INTEGER keepo = 0; keepo <= 10; keepo += 1){
-        std::cout << "keepo =" << keepo << std::endl;
-    }
-    lua_remove(lua, -1);
-    if (keepo == 0) {
-        std::cout << "removed keepo from stack \n";
-    }
     lua_close(lua);
     return 0;
 }
