@@ -22,9 +22,13 @@ extern "C"{
 //    else  return realloc(ptr, nsize);
 //}
 
-int main(int argc, const char * argv[]) {
-    test();
+int main() {
+    additiontest();
     lua_State *lua = luaL_newstate();
+//    lua_Integer num;
+//    int id = 1;
+//    AddIntToTable(lua, id , num);
+    
     lua_close(lua);
     return 0;
 }

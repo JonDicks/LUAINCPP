@@ -14,7 +14,7 @@ extern "C"{
     #include "INCLUA.h"
 }
 
-int test() {
+int additiontest () {
     lua_State *luatest = luaL_newstate();
     std::cout << "built lua enviorment: " << luatest << "\n";
     lua_Integer testint;
@@ -32,6 +32,20 @@ int test() {
     if (testint == 0) {
         std::cout << "removed testint from stack \n";
     }
+
+    lua_close(luatest);
+    return 0;
+}
+
+// lua function AddIntToTable takes in a lua state,
+lua_CFunction AddIntToTable (lua_State *luatest){
+//      creates new lua state.
+    luatest = luaL_newstate();
+    
+//    says if there is a table with the index of id,
+//    if (lua_istable(luatest, id)){
+//        std::cout << "table id is equal to" << id << std::endl;
+//    }
 
     lua_close(luatest);
     return 0;
