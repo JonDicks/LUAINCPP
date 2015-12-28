@@ -25,10 +25,11 @@ extern "C"{
 int main() {
     additiontest();
     lua_State *lua = luaL_newstate();
-//    lua_Integer num;
-//    int id = 1;
-//    AddIntToTable(lua, id , num);
-    
+//    const char *thingy = "thingy";
+//    int id = 10;
+//    lua_pushcfunction(lua, AddIntToTable(lua, id, thingy));
+//    AddIntToTable(lua, id, thingy);
+
     lua_close(lua);
     return 0;
 }

@@ -38,14 +38,16 @@ int additiontest () {
 }
 
 // lua function AddIntToTable takes in a lua state,
-lua_CFunction AddIntToTable (lua_State *luatest){
+lua_CFunction AddIntToTable (lua_State *luatest, int id, const char *thingy){
 //      creates new lua state.
     luatest = luaL_newstate();
+//      pushes id[thingy] onto the stack
+    lua_getfield(luatest, id, thingy);
     
 //    says if there is a table with the index of id,
-//    if (lua_istable(luatest, id)){
-//        std::cout << "table id is equal to" << id << std::endl;
-//    }
+    if (lua_istable(luatest, id)){
+        std::cout << "table id is equal to" << id << std::endl;
+    }
 
     lua_close(luatest);
     return 0;
