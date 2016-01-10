@@ -22,15 +22,26 @@ extern "C"{
 //    else  return realloc(ptr, nsize);
 //}
 
-int main() {
-    additiontest();
-    lua_State *lua = luaL_newstate();
-//    const char *thingy = "thingy";
-//    int id = 10;
-//    lua_pushcfunction(lua, AddIntToTable(lua, id, thingy));
 //    AddIntToTable(lua, id, thingy);
 
-    lua_close(lua);
-    return 0;
+
+bool testing(){
+    try {
+    additiontest();
+    std::cout << "ADDITION TEST PASSED \n";
+    }
+    catch (int err){
+        std::cout << "ADDITION TEST FAILED" << err << std::endl;
+    }
+// TO-DO: add more tests here in a try-catch
+    return true;
 }
 
+int main() {
+    if (testing())
+        std::cout << "TESTS PASSED \n";
+    else
+        std::cout << "TESTS FAILED \n";
+
+    return 0;
+}
