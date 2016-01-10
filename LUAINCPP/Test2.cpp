@@ -7,3 +7,7 @@
 //
 
 #include <stdio.h>
+
+extern "C"{
+    #include "INCLUA.h"
+}

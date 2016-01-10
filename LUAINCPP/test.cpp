@@ -34,6 +34,7 @@ int additiontest () {
     if (testint == 0) {
         std::cout << "removed testint from stack \n";
     }
+    else std::cout << "failed to remove testint from stack \n";
 
     lua_close(luatest);
     return 0;
