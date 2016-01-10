@@ -22,13 +22,8 @@ int additiontest () {
     lua_pushinteger(luatest, testint);
     std::cout << "pushed integer 'testint' onto stack \n" << "testint is equal to: " << testint << std::endl;
     for (testint = 0; testint <= 10; testint += 1){
-        std::cout << "testint =" << testint << std::endl;
         lua_pushinteger(luatest, testint);
-        if (testint != 0){
-            lua_remove(luatest, -1);
-        }
-        lua_pushinteger(luatest, testint);
-        
+        std::cout << "testint = " << testint << std::endl;
     }
     lua_remove(luatest, -1);
     if (testint == 0) {
