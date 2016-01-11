@@ -10,38 +10,33 @@
 extern "C"{
     #include "INCLUA.h"
     #include "test.cpp"
+    #include "Test2.cpp"
+
 }
 
-//static void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize){
-//    (void) ud;
-//    (void) osize;
-//    if (nsize == 0){
-//        free(ptr);
-//        return NULL;
-//    }
-//    else  return realloc(ptr, nsize);
-//}
+using namespace std;
 
-//    AddIntToTable(lua, id, thingy);
-
-
-bool testing(){
+bool tests(){
     try {
-    additiontest();
-    std::cout << "ADDITION TEST PASSED \n";
+        additiontest();
     }
-    catch (int err){
-        std::cout << "ADDITION TEST FAILED" << err << std::endl;
+    catch(int err) {
+        cout << err;
+        return false;
     }
-// TO-DO: add more tests here in a try-catch
     return true;
+// TO-DO: add more tests here in a try-catch
 }
+
+
+
+
 
 int main() {
-    if (testing())
-        std::cout << "TESTS PASSED \n";
+    if (tests())
+        cout << "TESTS PASSED \n";
     else
-        std::cout << "TESTS FAILED \n";
+        cout << "TESTS FAILED \n";
 
     return 0;
 }
