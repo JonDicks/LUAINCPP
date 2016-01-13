@@ -16,24 +16,8 @@ extern "C"{
 
 using namespace std;
 
-bool tests(){
-    try {
-        additiontest();
-    }
-    catch(int err) {
-        cout << err;
-        return false;
-    }
-    return true;
-// TO-DO: add more tests here in a try-catch
-}
-
-
-
-
-
 int main() {
-    if (tests())
+    if (runadditiontest())
         cout << "TESTS PASSED \n";
     else
         cout << "TESTS FAILED \n";

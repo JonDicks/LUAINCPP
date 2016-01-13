@@ -31,7 +31,7 @@ extern "C"{
 
 
 */
-int additiontest () {
+bool additiontest () {
     try{
     lua_State *luatest = luaL_newstate();
     std::cout << "built lua environment: " << luatest << "\n";
@@ -41,21 +41,42 @@ int additiontest () {
     int stackbefore = lua_gettop(luatest);
     for (testint = 0; testint < 10;){
         lua_pushinteger(luatest, testint);
-        testint += 1;   //NOTE THIS HAS BEEN PUT HERE INSTEAD OF IN THE () OF THE FOR LOOP BECAUSE OTHERWISE WE GET
+        testint ++;   //NOTE THIS HAS BEEN PUT HERE INSTEAD OF IN THE () OF THE FOR LOOP BECAUSE OTHERWISE WE GET
                         //TESTINT AS 11 AT THE END BECAUSE IT RUNS ONE NUMBER OVER
         std::cout << "testint = " << testint << std::endl;
-        lua_remove(luatest, -1);
+        lua_remove(luatest, -1); //REMOVE THIS IN ORDER TO MAKE THE TEST FAIL
     }
     int stackafter = lua_gettop(luatest);
     if ( stackbefore == stackafter) {
         std::cout << "removed testint from stack \n";
     }
-    else throw std::invalid_argument ("FAILED TO REMOVE TESTINT FROM STACK \n");
-
+    else throw "FAILED TO REMOVE TESTINT FROM STACK \n";
     lua_close(luatest);
-        throw 1;
-    } catch(int err) {
-        std::cout << err << "ADDITION TEST FAILED \n";
     }
-    return 0;
+    catch (int err){
+        std::cout << err;
+        return false;
+    }
+    return true;
 }
+
+bool runadditiontest(){
+    try {
+        if (additiontest()){
+            std::cout << "ADDITION TEST PASSED \n";
+            return true;
+        }
+    } catch (const char* err) {
+        std::cout << "ADDITION TEST FAILED \n";
+        std::cout << err;
+    }
+    
+    return false;
+}
+
+//bool runadditiontest(){
+//    if (testadditiontest()){
+//        return true;
+//    }
+//    else return false;
+//}
