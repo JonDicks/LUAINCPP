@@ -9,15 +9,27 @@
 #include <iostream>
 extern "C"{
     #include "INCLUA.h"
-    #include "test.cpp"
-    #include "Test2.cpp"
+    #include "additiontest.cpp"
+    #include "intsandfunctions.cpp"
 
 }
 
 using namespace std;
 
+bool tests(){
+
+    if(runadditiontest()){
+        
+        return true;
+        
+    }
+    else {
+    return false;
+    }
+}
+
 int main() {
-    if (runadditiontest())
+    if (runadditiontest() & runaddInt())
         cout << "TESTS PASSED \n";
     else
         cout << "TESTS FAILED \n";
