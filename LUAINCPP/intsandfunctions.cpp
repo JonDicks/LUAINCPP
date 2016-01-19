@@ -25,9 +25,9 @@ bool addInt(){
     lua_State *luatest = luaL_newstate();
     cout << "lua environment built and is equal to " << luatest << endl;
     try {
-    LUA_INTEGER index = 1;
+    LUA_INTEGER index = 1; // 1 refers the index of the array.
     LUA_INTEGER num[index];
-    LUA_INTEGER numtwo;
+    LUA_INTEGER numtwo = 322; // 322 is a random number.
     num[index] = {numtwo};
     cout << "num[index] is equal to " <<  num[index] << endl;
     lua_close(luatest);

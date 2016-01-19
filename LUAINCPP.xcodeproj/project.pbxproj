@@ -10,6 +10,7 @@
 		F03DA19F1C42C6350098A516 /* intsandfunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F03DA19E1C42C6350098A516 /* intsandfunctions.cpp */; };
 		F0C66BE61C2EFB9C007AF643 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0C66BE51C2EFB9C007AF643 /* main.cpp */; };
 		F0C66BEE1C2F36A8007AF643 /* additiontest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0C66BED1C2F36A8007AF643 /* additiontest.cpp */; };
+		F0EA921B1C4DBA9400703B5B /* usingpointers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0EA921A1C4DBA9400703B5B /* usingpointers.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,7 @@
 		F0C66BE51C2EFB9C007AF643 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F0C66BEC1C2EFD00007AF643 /* INCLUA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INCLUA.h; sourceTree = "<group>"; };
 		F0C66BED1C2F36A8007AF643 /* additiontest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = additiontest.cpp; sourceTree = "<group>"; };
+		F0EA921A1C4DBA9400703B5B /* usingpointers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = usingpointers.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				F0C66BE51C2EFB9C007AF643 /* main.cpp */,
 				F0C66BED1C2F36A8007AF643 /* additiontest.cpp */,
 				F03DA19E1C42C6350098A516 /* intsandfunctions.cpp */,
+				F0EA921A1C4DBA9400703B5B /* usingpointers.cpp */,
 			);
 			path = LUAINCPP;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EA921B1C4DBA9400703B5B /* usingpointers.cpp in Sources */,
 				F03DA19F1C42C6350098A516 /* intsandfunctions.cpp in Sources */,
 				F0C66BE61C2EFB9C007AF643 /* main.cpp in Sources */,
 				F0C66BEE1C2F36A8007AF643 /* additiontest.cpp in Sources */,
